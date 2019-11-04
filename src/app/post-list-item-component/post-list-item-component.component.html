@@ -1,0 +1,12 @@
+
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts >= unLoveIts && loveIts > 0,
+                'list-group-item-danger': loveIts < unLoveIts}">
+  <ul class="text-right list-inline" >{{ createdAt | date : "short" }}</ul>
+  <h3>{{ title }}</h3>
+  <h5>{{ content }}</h5>
+  <h6>Like : {{ loveIts }}</h6>
+  <h6>Unlike : {{ unLoveIts }}</h6>
+  <button class="btn btn-success" (click)="setLoveIts()">Like it</button>
+  <button class="btn btn-danger" (click)="setUnloveIts()">UnLike it</button>
+</li>
